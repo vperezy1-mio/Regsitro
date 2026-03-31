@@ -5,3 +5,7 @@ class INicio:
     def mostrar_mesnaje(self):
         print(f"Bienvenido: {self.nombre}")
         
+
+    def crear(self):
+        print("hlola")
+        
