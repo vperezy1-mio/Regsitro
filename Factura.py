@@ -44,10 +44,11 @@ class Factura:
         print(f"Turno: {self.vendedor.turno}")
 
         print("\n====TIPO DE PAGO====")
-        print({self.tipoPago.esTarjeta})
+        metodo = "Tarjeta" if self.tipoPago.esTarjeta else "Efectivo"
+        print(f"Metodo: {metodo}")
 
         print(f"\n====TOTAL A PAGAR====")
-        print(f"Total: {self.producto.costoTotal()}")
+        print(f"Total: {self.producto.costoTotal():.2f}")
 
     
 
