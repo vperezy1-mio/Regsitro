@@ -9,7 +9,7 @@ class Producto:
         self.cantidadPro = cantidadPro
 
     def costoTotal(self):
-        return self.costoPro * self.cantidadPro
+        return (self.costoPro * self.cantidadPro)
 
 
         """import uuid
