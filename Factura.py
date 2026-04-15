@@ -1,4 +1,58 @@
-import Empresa
+import uuid
+import datetime
+
+
+class Factura:
+    def __init__(self, empresa, cliente, vendedor, producto, tipoPago):
+        self.idFactura = uuid.uuid4()
+        self.fecha = datetime.datetime.now()
+        self.empresa = empresa
+        self.cliente = cliente
+        self.vendedor = vendedor
+        self.producto = producto
+        self.tipoPago = tipoPago
+
+    def imprimirFactura(self):
+        print(f"\n==== FACTURA ====")
+        print(f"Factura ID: {self.idFactura}")
+        print(f"Fecha de facturacion: {self.fecha}")
+
+        print(f"\n====DATOS DE LA EMPRESA====")
+        print(f"Nombre: {self.empresa.nombreEmp}")
+        print(f"Nit: {self.empresa.nitEmp}")
+        print(f"Direccion: {self.empresa.direccionEmp}")
+        print(f"Correo: {self.empresa.correoEmp}")
+        
+        print(f"\n====DATOS DEL PRODUCTO====")
+        print(f"Tipo: {self.producto.tipoPro}")
+        print(f"Nombre: {self.producto.nombrePro}")
+        print(f"Costo por unidad: {self.producto.costoPro}")
+        print(f"Cantidad: {self.producto.cantidadPro}")
+
+        print(f"\n====DATOS DEL CLIENTE====")
+        print(f"Nit: {self.cliente.nitClien}")
+        print(f"Nombre: {self.cliente.nombreClien}")
+        print(f"Direccion: {self.cliente.direccionClien}")
+        print(f"Telefono: {self.cliente.telefonoClien}")
+        print(f"Correo: {self.cliente.correoClien}")
+
+
+        print(f"\n====DATOS DEL VENDEDOR====")
+        print(f"Nit: {self.vendedor.nitVen}")
+        print(f"Nombre: {self.vendedor.nombreVen}")
+        print(f"Caja: {self.vendedor.caja}")
+        print(f"Turno: {self.vendedor.turno}")
+
+        print("\n====TIPO DE PAGO====")
+        print({self.tipoPago.esTarjeta})
+
+        print(f"\n====TOTAL A PAGAR====")
+        print(f"Total: {self.producto.costoTotal()}")
+
+    
+
+
+"""import Empresa
 import Vendedor
 import Cliente
 import TipoPago
@@ -33,3 +87,4 @@ class Factura:
         print("Fecha de emision: {self.fecha}")
         print("{self.nombrePro} {self.precio}")
         self.total()
+"""
